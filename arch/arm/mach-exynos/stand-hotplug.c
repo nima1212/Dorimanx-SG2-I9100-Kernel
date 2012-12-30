@@ -629,9 +629,7 @@ static int standhotplug_cpufreq_policy_notifier_call(struct notifier_block *this
 		if (
 			(!strnicmp(policy->governor->name, "pegasusq", CPUFREQ_NAME_LEN)) ||
 			(!strnicmp(policy->governor->name, "lulzactiveq", CPUFREQ_NAME_LEN)) ||
-			(!strnicmp(policy->governor->name, "abussplug", CPUFREQ_NAME_LEN)) ||
-			(!strnicmp(policy->governor->name, "ZenX", CPUFREQ_NAME_LEN)) ||
-			(!strnicmp(policy->governor->name, "nightmare", CPUFREQ_NAME_LEN)) ||
+			(!strnicmp(policy->governor->name, "abyssplug", CPUFREQ_NAME_LEN)) ||
 			(!strnicmp(policy->governor->name, "hotplug", CPUFREQ_NAME_LEN))
 			)
 		{
@@ -673,6 +671,7 @@ static int __init exynos4_pm_hotplug_device_init(void)
 
 #if defined(CONFIG_CPU_FREQ_DEFAULT_GOV_PEGASUSQ) || \
 	defined(CONFIG_CPU_FREQ_DEFAULT_GOV_HOTPLUG) || \
+	defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ABYSSPLUG) || \
 	defined(CONFIG_CPU_FREQ_DEFAULT_GOV_LULZACTIVEQ)
 	standhotplug_enabled = 0;
 #else
